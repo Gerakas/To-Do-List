@@ -1,4 +1,6 @@
-ody,html {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Pacifico&display=swap');
+
+body,html {
     margin: 0;
     padding: 0;
 }
@@ -9,13 +11,12 @@ ody,html {
     box-sizing: border-box;
 }
 
-#side-bar {
-    background-color: blue;
-    height: 100vh;
-}
 
-#main-viewport {
-    background-color: red;
+/*------------------- Side-Bar -------------------*/
+
+
+#side-bar {
+    background-color: #2D354C;
     height: 100vh;
 }
 
@@ -24,4 +25,33 @@ ody,html {
     z-index: 1;
 }
 
-/*------------------- Different Screen Resolutions --------------------*/
+#logo {
+    margin: 50px 0;
+    color: #F5F1F1;
+    font-family: 'Pacifico', sans-serif;
+    font-size: 54px;
+}
+
+#list-container {
+    margin-top: 50px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.list-block {
+    width: 15vw;
+    min-width: 200px;
+    min-height: 300px;
+    background-color: #CB3840;
+}
+
+/*------------------- Main-Viewport -------------------*/
+
+
+#main-viewport {
+    padding: 0;
+    background-color: #F5F1F1;
+    height: 100vh;
+}
+
+/*------------------- Different Screen Resolutions -------------------*/

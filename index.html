@@ -12,17 +12,96 @@
     <title>LogBook</title>
 </head>
 <body>
+
     <div class="container-fluid">
         <div class="row">
+
+            <!--Side-Bar-->
             <button type="button" id="hamburger"></button>
             <div id="side-bar" class="col-xl-2 col-sm-3 col-xs-4">
-                <h1>LogBook</h1>
+                <h1 id="logo" class="d-flex justify-content-center">LogBook</h1>
+                <div id="side-bar-menu" class="d-flex justify-content-center">
+                    <ul>
+                        <li>New List </li>
+                        <li>Starred</li>
+                        <li>Bin</li>
+                    </ul>
+                </div>
             </div>
+
+            <!--Main-Viewport-->
             <div id="main-viewport" class="col col-xl-10 col-sm-9 col-xs-8">
-            <p></p>
+
+                <!--Input Field (Feature may be added as search bar once all other core feautires have been added)-->
+                <!-- 
+                <div class="container d-flex justify-content-center">
+                    <input id="input-bar" type="text">
+                </div>
+                -->
+
+                <!--List Container-->
+                <div id="list-container" class="d-flex justify-content-center">
+                    <div class="container-fluid">
+                        <div class="row">
+
+                            <!-- Create new list buttom when list container is empty (Feature may be added once all other core feautires have been added)-->
+                            <!--
+                            <div class="col-12 d-flex justify-content-center">
+                                <button>Create New List</button>
+                            </div>
+                            -->
+
+                            <div class="col d-flex justify-content-center">
+                                <div class="list-template">
+                                    <ul class="list-block">
+                                        <h3 class="list-title">List Title</h3>
+                                        <li class="li-item">task</li>
+                                        <li class="li-item">task</li>
+                                        <li class="li-item">task</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col d-flex justify-content-center">
+                                <div class="list-template">
+                                    <ul class="list-block">
+                                        <h3 class="list-title">List Title</h3>
+                                        <li class="li-item">task</li>
+                                        <li class="li-item">task</li>
+                                        <li class="li-item">task</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col d-flex justify-content-center">
+                                <div class="list-template">
+                                    <ul class="list-block">
+                                        <h3 class="list-title">List Title</h3>
+                                        <li class="li-item">task</li>
+                                        <li class="li-item">task</li>
+                                        <li class="li-item">task</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col d-flex justify-content-center">
+                                <div class="list-template">
+                                    <ul class="list-block">
+                                        <h3 class="list-title">List Title</h3>
+                                        <li class="li-item">task</li>
+                                        <li class="li-item">task</li>
+                                        <li class="li-item">task</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
 </body>
 <script src="assets/js/main.js"></script>
 </html>
