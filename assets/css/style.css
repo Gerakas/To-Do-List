@@ -1,0 +1,27 @@
+ody,html {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    height: 100vh;
+    border: 3px;
+    box-sizing: border-box;
+}
+
+#side-bar {
+    background-color: blue;
+    height: 100vh;
+}
+
+#main-viewport {
+    background-color: red;
+    height: 100vh;
+}
+
+#hamburger {
+    position: absolute;
+    z-index: 1;
+}
+
+/*------------------- Different Screen Resolutions --------------------*/
