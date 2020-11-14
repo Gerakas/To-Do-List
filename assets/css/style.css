@@ -5,27 +5,27 @@ body,html {
     padding: 0;
     font-size: 12px;
     font-family: 'Montserrat',sans-serif;
+    background-image: linear-gradient(90deg, #119da4, #404e7c);
 }
 
-/*------------------- Side-Bar -------------------*/
+/*========================== Side-Bar ==========================*/
 
 
 #side-bar {
-    background-color: #2D354C;
+    background: rgba(180, 180, 180, 0.5);
+    backdrop-filter: blur(10px);
     height: 100vh;
+    min-width: 150px;
 }
 
-#hamburger {
+#side-bar-toggle, #side-bar-toggle:focus {
     position: absolute;
     z-index: 1;
     background-color: transparent;
-    font-size: 2rem;
+    font-size: 2.5rem;
     border: none;
-    margin-left: 1rem;
-    color: #F5F1F1;
-}
-
-#hamburger:focus{
+    margin: 1rem 0 0 1rem;
+    color: rgba(255, 255, 255, 0.5);
     outline: none;
 }
 
@@ -35,6 +35,9 @@ body,html {
     font-family: 'Pacifico', sans-serif;
     font-size: 3em;
 }
+
+/* Nav Menu ------------------------------------*/
+
 
 #side-bar-menu-column, #side-bar-menu-container {
     padding: 0;
@@ -50,26 +53,76 @@ body,html {
     color: #F5F1F1;
 }
 
-.nav-link:hover, :focus {
+.nav-link:hover, .nav-lin:focus {
     color: #F5F1F1;
     outline: none;
-    background-color: red;
+    background-color: #404e7c;
 }
 
 nav i {
     margin: 0 1rem;
 }
 
-/*------------------- Main-Viewport -------------------*/
+
+/*========================== Main-Viewport ==========================*/
 
 
 #main-viewport {
-    padding: 0 5rem;
-    background-color: #F5F1F1;
+    padding: 0 3vw;
     height: 100vh;
 }
 
-/* List Blocks*/
+/* User Info ------------------------------------*/
+
+
+#user-info {
+    text-align: end;
+    margin: 1rem;
+}
+
+#user-name {
+    display: inline-block;
+    color: #F5F1F1;
+}
+
+#user-profile {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+#dropdownMenuButton, #dropdownMenuButton:focus {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.dropdown-toggle {
+    color: #F5F1F1;
+}
+
+.dropdown-toggle i{
+    font-size: 2.5rem;
+}
+
+/* Search Bar ------------------------------------*/
+
+
+#search-bar {
+    margin-top: 12rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+#search-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border: none;
+    color: #F5F1F1;
+}
+
+/* List Box ------------------------------------*/
+
 
 #li-container {
     margin-top: 6rem;
@@ -90,4 +143,4 @@ nav i {
 }
 
 
-/*------------------- Different Screen Resolutions -------------------*/
+/*========================== Different Screen Resolutions ==========================*/
