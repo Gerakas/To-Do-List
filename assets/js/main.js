@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     
     // Sidebar toggle
@@ -12,30 +11,57 @@ $(document).ready(function() {
     // List functionality
     
     // Task Icons
-    // 1. "Check" icon for completed task.
-    $(".fa-check").click(function () {
+    $(document).click(function() {
+        // 1. "Check" icon for completed task.
+        $(".fa-check").click(function () {
 
-        // Fades the task out in .8 seconds
-        $(this).parents("li").fadeOut(500);
-        
-        // Adds style to text in order to show it has been completed (adds a line over it and changes its colour)
-        $(this).parent().siblings().attr("style","text-decoration: line-through; color:#404e7c;")
-        // and queues the task back in at the bottom of the list.
-        .delay(500).queue(function() {
-            $(this).siblings().children(".fa-check").remove();
-            $(this).parents("li").appendTo($(this).parents("ul")).fadeIn(500); 
+            // Fades the task out in .8 seconds
+            $(this).parents("li").fadeOut(500);
+            
+            // Adds style to text in order to show it has been completed (adds a line over it and changes its colour)
+            $(this).parent().siblings().attr("style","text-decoration: line-through; color:#404e7c;")
+            // and queues the task back in at the bottom of the list.
+            .delay(500).queue(function() {
+                // Removes the "check" icon
+                $(this).siblings().children(".fa-check").remove();
+                
+                // Changes tasks background
+                $(this).parents("li").attr("style","background-color:#F3F6F7;");
+
+                // Fades the task back into the list
+                $(this).parents("li").appendTo($(this).parents("ul")).fadeIn(500); 
+            });
+
         });
+    });
+        
+    $(document).click(function() {
+        // 2. "Times" icon tom remove task.
+        $(".fa-times").click(function () {
 
+            // Removes task from list with a 0.5s fade out.
+            $(this).parents("li").fadeOut(500, function() { 
+                $(this).remove(); 
+            });
+
+        });
     });
 
-    // 2. "Times" icon tom remove task.
-    $(".fa-times").click(function () {
+        // 3. Add new task 
+        $(".addListInput").keypress(function() {
+            // This bit of code was kindly provided by https://howtodoinjava.com/jquery/jquery-detect-if-enter-key-is-pressed/
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if(keycode == '13' && $(this).val() != ""){
 
-        // Removes task from list with a 0.5s fade out.
-        $(this).parents("li").fadeOut(500, function() { 
-            $(this).remove(); 
+                $('<li class="list-group-item"><div class="row"><div class="col-8">' + $(this).val() + '</div><div class=" col-4 list-icons-container"><i class="fas fa-times list-icon"></i><i class="fas fa-check list-icon"></i></div></div></li>').prependTo($(this).parents("ul"));
+            };
         });
+    
+    // Nav Menuu Functionality 
 
+    // New List
+    $(".nav-link").click(function () {
+        
     });
  
     
