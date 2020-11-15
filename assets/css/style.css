@@ -8,14 +8,17 @@ body,html {
     background-image: linear-gradient(90deg, #119da4, #404e7c);
 }
 
+
+
+
 /*========================== Side-Bar ==========================*/
 
 
 #side-bar {
     background: rgba(180, 180, 180, 0.5);
     backdrop-filter: blur(10px);
-    height: 100vh;
-    min-width: 150px;
+    min-height: 100vh;
+    min-width: 170px;
 }
 
 #side-bar-toggle, #side-bar-toggle:focus {
@@ -36,7 +39,8 @@ body,html {
     font-size: 3em;
 }
 
-/* Nav Menu ------------------------------------*/
+
+/* Nav menu ------------------------------------*/
 
 
 #side-bar-menu-column, #side-bar-menu-container {
@@ -64,20 +68,24 @@ nav i {
 }
 
 
+
+
 /*========================== Main-Viewport ==========================*/
 
 
 #main-viewport {
-    padding: 0 3vw;
-    height: 100vh;
+    padding: 0 3vw 6vw 3vw;
+    height: 100%;
 }
 
-/* User Info ------------------------------------*/
+
+/* User info and profile ------------------------------------*/
 
 
 #user-info {
     text-align: end;
     margin: 1rem;
+    padding: 0;
 }
 
 #user-name {
@@ -90,21 +98,26 @@ nav i {
     margin: 0 1rem;
 }
 
-#dropdownMenuButton, #dropdownMenuButton:focus {
+#dropdownMenuButton, #dropdownMenuButton:focus, #dropdownEditButton, #dropdownEditButton:focus {
     background-color: transparent;
     border: none;
     outline: none;
+}
+
+#dropdownEditButton, #dropdownEditButton:focus {
+    float: right;
 }
 
 .dropdown-toggle {
     color: #F5F1F1;
 }
 
-.dropdown-toggle i{
+.dropdown-toggle .fa-user-circle{
     font-size: 2.5rem;
 }
 
-/* Search Bar ------------------------------------*/
+
+/* Search bar ------------------------------------*/
 
 
 #search-bar {
@@ -113,34 +126,173 @@ nav i {
     margin-right: 3rem;
 }
 
-#search-input {
+#search-input, #search-input:focus {
     width: 100%;
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
     border: none;
     color: #F5F1F1;
+    outline: none;
 }
 
-/* List Box ------------------------------------*/
+/* List boxes ------------------------------------*/
 
 
-#li-container {
+#list-container {
     margin-top: 6rem;
 }
 
-.li-box {
+.list-box {
     width: 100%;
     margin-top: 3rem;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .list-title {
     font-size: 2rem;
     font-weight: 500;
+    display: inline-block;
 }
 
 .list-group-item {
     font-size: 1.5rem;
+    min-height: 3rem;
+    line-height: 3rem;
 }
 
+.list-icon {
+    margin: 0 1rem;
+    float: right;
+    color: #119da4;
+    width: 2rem;
+    height:2rem;
+    text-align: center;
+    
+}
+
+.list-icons-container {
+    height: 2rem;
+    margin: auto;
+}
+
+.list-icon:hover, #edit-icon:hover {
+    font-size: 2rem;
+}
+
+#edit-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: #119da4;
+    text-align: center;
+}
+
+/* Edit dropdowns in lists */
+
+.dropdown-item {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: rgb(131, 131, 131);
+}
+
+.dropdownEditMenuIcons {
+    margin-right: 1rem;
+}
+
+.dropdown-item:hover {
+    color: #119da4
+}
+
+.dropdown-item:active, .dropdown-item:focus {
+    background-color: #119da4;
+    outline: none;
+    color: #F5F1F1;
+}
+
+/* Modal */
+
+
+#menu-modal-btn {
+    background-color: transparent;
+    font-size: 4rem;
+    border: none;
+    margin-bottom: .5rem;
+    color: rgba(255, 255, 255, 0.5);
+    outline: none;
+    display: none;
+}
+
+.modal-dialog {
+    margin-top: 15vh;
+}
+
+.modal-body {
+    background-color: #F5F1F1;
+}
+
+.modal-nav-link {
+    font-size: 2rem;
+    text-align: center;
+    color: #404e7c;
+}
+
+.modal-nav-link:hover, .nav-lin:focus {
+    background-color: #404e7c;
+}
+
+.close:focus {
+    outline: none;
+    border: none;
+}
 
 /*========================== Different Screen Resolutions ==========================*/
+
+@media (max-width: 700px) {
+
+
+    /* Side Bar */
+
+    #side-bar {
+        min-width: 100%;
+        min-height: 10rem;
+    }
+
+    #side-bar-toggle {
+        display: none;
+    }
+
+    #logo {
+        font-size: 6rem;
+        margin: 4rem 0;
+    }
+
+    #side-bar-menu-container {
+        display: none;
+    }
+
+    /* Main Viewport */
+
+    #main-viewport {
+        min-width: 100%;
+    }
+
+    #menu-modal-btn {
+        display: inline-block;
+    }
+
+    #search-bar {
+        margin-top: 6rem;
+    }
+
+    /* Lists */
+    #list-container {
+        margin-top: 3rem;
+    }
+
+    .list-icons-container {
+        height: 100%;
+    }
+
+    .list-icon {
+        margin: .5rem;
+    }
+}

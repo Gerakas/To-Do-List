@@ -6,5 +6,8 @@ $(document).ready(function() {
         $("#main-viewport").toggleClass("col-xl-10 col-sm-9 col-xs-8");
     });
 
-    
+    $('#menu-modal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    })
+
 });
