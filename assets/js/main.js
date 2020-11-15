@@ -12,22 +12,31 @@ $(document).ready(function() {
     // List functionality
     
     // Task Icons
-    // 1. "Tick" for complete.
+    // 1. "Check" icon for completed task.
     $(".fa-check").click(function () {
 
         // Fades the task out in .8 seconds
-        $(this).parents("li").fadeOut(800);
+        $(this).parents("li").fadeOut(500);
         
         // Adds style to text in order to show it has been completed (adds a line over it and changes its colour)
         $(this).parent().siblings().attr("style","text-decoration: line-through; color:#404e7c;")
         // and queues the task back in at the bottom of the list.
-        .delay(800).queue(function() {
+        .delay(500).queue(function() {
             $(this).siblings().children(".fa-check").remove();
-            $(this).parents("li").appendTo($(this).parents("ul")).fadeIn(800); 
+            $(this).parents("li").appendTo($(this).parents("ul")).fadeIn(500); 
         });
 
     });
-        
+
+    // 2. "Times" icon tom remove task.
+    $(".fa-times").click(function () {
+
+        // Removes task from list with a 0.5s fade out.
+        $(this).parents("li").fadeOut(500, function() { 
+            $(this).remove(); 
+        });
+
+    });
  
     
 });
