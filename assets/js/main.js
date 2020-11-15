@@ -1,13 +1,33 @@
+
 $(document).ready(function() {
     
-    // Hambuger Icon toggle
+    // Sidebar toggle
     $("#side-bar-toggle").click(function(){
-        $("#side-bar").toggle();
+        $("#side-bar").toggle(600, "linear")
         $("#main-viewport").toggleClass("col-xl-10 col-sm-9 col-xs-8");
+        $("#sidebarToggle").toggleClass("fa-chevron-circle-left");
+        $("#sidebarToggle").toggleClass("fa-chevron-circle-right");
     });
 
-    $('#menu-modal').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
-    })
+    // List functionality
+    
+    // Task Icons
+    // 1. "Tick" for complete.
+    $(".fa-check").click(function () {
 
+        // Fades the task out in .8 seconds
+        $(this).parents("li").fadeOut(800);
+        
+        // Adds style to text in order to show it has been completed (adds a line over it and changes its colour)
+        $(this).parent().siblings().attr("style","text-decoration: line-through; color:#404e7c;")
+        // and queues the task back in at the bottom of the list.
+        .delay(800).queue(function() {
+            $(this).siblings().children(".fa-check").remove();
+            $(this).parents("li").appendTo($(this).parents("ul")).fadeIn(800); 
+        });
+
+    });
+        
+ 
+    
 });
