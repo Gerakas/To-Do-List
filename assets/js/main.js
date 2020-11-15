@@ -11,9 +11,8 @@ $(document).ready(function() {
     // List functionality
     
     // Task Icons
-    $(document).click(function() {
         // 1. "Check" icon for completed task.
-        $(".fa-check").click(function () {
+        $(".list-group").on("click", ".fa-check",function() {
 
             // Fades the task out in .8 seconds
             $(this).parents("li").fadeOut(500);
@@ -29,15 +28,14 @@ $(document).ready(function() {
                 $(this).parents("li").attr("style","background-color:#F3F6F7;");
 
                 // Fades the task back into the list
-                $(this).parents("li").appendTo($(this).parents("ul")).fadeIn(500); 
+                $(this).parents("li").appendTo($(this).parents(".list-group")).fadeIn(500); 
             });
 
         });
-    });
         
-    $(document).click(function() {
+    
         // 2. "Times" icon tom remove task.
-        $(".fa-times").click(function () {
+        $(".list-group").on("click", ".fa-times",function() {
 
             // Removes task from list with a 0.5s fade out.
             $(this).parents("li").fadeOut(500, function() { 
@@ -45,7 +43,7 @@ $(document).ready(function() {
             });
 
         });
-    });
+
 
         // 3. Add new task 
         $(".addListInput").keypress(function() {
@@ -54,6 +52,7 @@ $(document).ready(function() {
             if(keycode == '13' && $(this).val() != ""){
 
                 $('<li class="list-group-item"><div class="row"><div class="col-8">' + $(this).val() + '</div><div class=" col-4 list-icons-container"><i class="fas fa-times list-icon"></i><i class="fas fa-check list-icon"></i></div></div></li>').prependTo($(this).parents("ul"));
+                $(".addListInput").val("");
             };
         });
     
