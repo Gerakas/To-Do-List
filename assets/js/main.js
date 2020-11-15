@@ -59,8 +59,9 @@ $(document).ready(function() {
     // Nav Menuu Functionality 
 
     // New List
-    $(".nav-link").click(function () {
-        
+    $("#side-bar-menu").on("click", ".nav-link-list", function () {
+        $('<div class="col-xl-6 col-sm-12 d-flex justify-content-center list-block"><div class="card list-box"><div class="card-body dropleft"><h5 class="list-title">Card title</h5><button class="drop-down" type="button" id="dropdownEditButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i id="edit-icon" class="fas fa-pen"></i></button><div class="dropdown-menu dropdown-menu-right" id="dropdownEditMenu" aria-labelledby="dropdownEditButton"><button class="dropdown-item" type="button"><i class="fas fa-edit dropdownEditMenuIcons"></i>Rename</button><button class="dropdown-item" type="button"><i class="fas fa-trash dropdownEditMenuIcons"></i> Delete</button></div></div><ul class="list-group list-group-flush"><!-- Add new task input --><li class="list-group-item"></li><div class="addList"><input type="text" class="addListInput" placeholder="Add task..."></div></li></ul></div></div>')
+        .appendTo("#listContainerRow");
     });
  
     
