@@ -50,7 +50,7 @@ $(document).ready(function() {
             // This bit of code was kindly provided by https://howtodoinjava.com/jquery/jquery-detect-if-enter-key-is-pressed/
             var keycode = (event.keyCode ? event.keyCode : event.which);
             if(keycode == '13' && $(this).val() != ""){
-
+            //
                 $('<li class="list-group-item"><div class="row"><div class="col-8">' + $(this).val() + '</div><div class=" col-4 list-icons-container"><i class="fas fa-times list-icon"></i><i class="fas fa-check list-icon"></i></div></div></li>').prependTo($(this).parents("ul"));
                 $(".addListInput").val("");
             };
@@ -62,7 +62,39 @@ $(document).ready(function() {
                 $(this).attr("display", "none"); 
             });
         });
-    
+
+        // 5. "Edit" icon to rename list
+
+        //5.a Modal Save Button
+        $("#listContainerRow").on("click", ".fa-pen", (function() {
+
+            $('#editListNameModal').on('show.bs.modal', function (e) {
+                var invoker = $(e.relatedTarget);
+
+                $("#editListNameSaveButton").click(function() {
+                
+                    console.log(invoker);
+                    if ($("#editListNameInput").val() != "") {
+                        
+                        // Retrieves the input text and assigns it to a variable
+                        let newTitleName = $("#editListNameInput").val();
+                        
+                        $(invoker).parent().siblings("h5").text(newTitleName);
+                        // Hides the modal
+                        $("#editListNameModal").modal('hide');
+                    }
+
+                });
+            });
+            
+
+        }));
+
+
+        // 5.b Modal Cancel Button 
+        $("#editListNameCancelButton").click(function() {
+            $("#editListNameInput").val("");
+        });
     
     // Nav Menuu Functionality 
 

@@ -105,13 +105,13 @@ nav i {
     margin: 0 1rem;
 }
 
-#dropdownMenuButton, #dropdownMenuButton:focus, #dropdownEditButton, #dropdownEditButton:focus {
+#dropdownMenuButton, #dropdownMenuButton:focus, .drop-down, .drop-down:focus {
     background-color: transparent;
     border: none;
     outline: none;
 }
 
-#dropdownEditButton, #dropdownEditButton:focus {
+.drop-down, .drop-down:focus {
     float: right;
 }
 
@@ -133,7 +133,7 @@ nav i {
     margin-right: 3rem;
 }
 
-#search-input, #search-input:focus {
+#search-input, #search-input:focus, #editListNameInput, #editListNameInput:focus {
     width: 100%;
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
@@ -144,7 +144,7 @@ nav i {
 /* List boxes ------------------------------------*/
 
 
-#edit-icon {
+.fa-pen {
     font-size: 1.5rem;
     margin-right: 1rem;
     color: #119da4;
@@ -188,7 +188,7 @@ nav i {
     margin: auto;
 }
 
-.list-icon:hover, #edit-icon:hover {
+.list-icon:hover, .fa-pen:hover {
     font-size: 2rem;
 }
 
@@ -199,6 +199,7 @@ nav i {
     background-color: transparent;
     outline: none;
 }
+
 
 #list0 {
     display: none!important;
@@ -251,6 +252,19 @@ nav i {
     outline: none;
     color: #F5F1F1;
 }
+
+.editListNameIcons {
+    background-color: #119da4;
+    color: #F5F1F1;
+    font-size: 1.25rem;
+}
+
+.editListNameIcons:hover, .editListNameIcons:focus  {
+    background-color: #F5F1F1;
+    color: #119da4;
+    border: 1px solid #119da4;
+}
+
 
 /* Modal */
 
