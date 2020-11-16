@@ -14,7 +14,7 @@ body {
 }
 
 input {
-  caret-color: grey;
+  caret-color: #000;
 }
 
 
@@ -242,6 +242,10 @@ nav i {
     background-color: #119da4;
     outline: none;
     color: #F5F1F1;
+}
+
+#list0 {
+    display: none!important;
 }
 
 /* Modal */

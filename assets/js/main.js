@@ -12,7 +12,7 @@ $(document).ready(function() {
     
     // Task Icons
         // 1. "Check" icon for completed task.
-        $(".list-group").on("click", ".fa-check",function() {
+        $("#listContainerRow").on("click", ".fa-check",function() {
 
             // Fades the task out in .8 seconds
             $(this).parents("li").fadeOut(500);
@@ -35,7 +35,7 @@ $(document).ready(function() {
         
     
         // 2. "Times" icon tom remove task.
-        $(".list-group").on("click", ".fa-times",function() {
+        $("#listContainerRow").on("click", ".fa-times",function() {
 
             // Removes task from list with a 0.5s fade out.
             $(this).parents("li").fadeOut(500, function() { 
@@ -46,7 +46,7 @@ $(document).ready(function() {
 
 
         // 3. Add new task 
-        $(".addListInput").keypress(function() {
+        $("#listContainerRow").on("keypress", ".addListInput", (function() {
             // This bit of code was kindly provided by https://howtodoinjava.com/jquery/jquery-detect-if-enter-key-is-pressed/
             var keycode = (event.keyCode ? event.keyCode : event.which);
             if(keycode == '13' && $(this).val() != ""){
@@ -54,14 +54,33 @@ $(document).ready(function() {
                 $('<li class="list-group-item"><div class="row"><div class="col-8">' + $(this).val() + '</div><div class=" col-4 list-icons-container"><i class="fas fa-times list-icon"></i><i class="fas fa-check list-icon"></i></div></div></li>').prependTo($(this).parents("ul"));
                 $(".addListInput").val("");
             };
-        });
+        }));
+    
     
     // Nav Menuu Functionality 
 
     // New List
-    $("#side-bar-menu").on("click", ".nav-link-list", function () {
-        $('<div class="col-xl-6 col-sm-12 d-flex justify-content-center list-block"><div class="card list-box"><div class="card-body dropleft"><h5 class="list-title">Card title</h5><button class="drop-down" type="button" id="dropdownEditButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i id="edit-icon" class="fas fa-pen"></i></button><div class="dropdown-menu dropdown-menu-right" id="dropdownEditMenu" aria-labelledby="dropdownEditButton"><button class="dropdown-item" type="button"><i class="fas fa-edit dropdownEditMenuIcons"></i>Rename</button><button class="dropdown-item" type="button"><i class="fas fa-trash dropdownEditMenuIcons"></i> Delete</button></div></div><ul class="list-group list-group-flush"><!-- Add new task input --><li class="list-group-item"></li><div class="addList"><input type="text" class="addListInput" placeholder="Add task..."></div></li></ul></div></div>')
-        .appendTo("#listContainerRow");
+    // Clones the existing list0
+    $(".nav-link-list").on("click", function() {
+        $("#list0").clone().appendTo("#listContainerRow");
+        
+        // Retrieves the ID of the cloned list (which is the same as the original list; list0)
+        let currentlistId = $("#listContainerRow").children().last().attr("id");
+        // Vey simply calculates the number of the current list 
+        let currentListIdNumber = currentlistId.charAt(currentlistId.length - 1);
+
+        // Retrieves the number of lists that already exist in the DOM
+        let numberOfLists = $("#listContainerRow").children();
+        
+        // Calculates the number of the newly created list 
+        let newListIdNumber = currentListIdNumber + numberOfLists.length - 1;
+        let newListID = "list" + newListIdNumber;
+
+        $("#listContainerRow").children().last().attr("id", newListID);
+
+        // Changes the display property from "none" to "inline-block"
+        $("#listContainerRow").children().last().css("display", "inline-block");
+        
     });
  
     
