@@ -55,6 +55,13 @@ $(document).ready(function() {
                 $(".addListInput").val("");
             };
         }));
+
+        // 4. "Trash" icon to delete list 
+        $("#listContainerRow").on("click", ".del", function() {
+             $(this).parents(".list-block").fadeOut(500, function() { 
+                $(this).attr("display", "none"); 
+            });
+        });
     
     
     // Nav Menuu Functionality 

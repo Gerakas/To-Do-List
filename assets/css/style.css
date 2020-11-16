@@ -200,6 +200,10 @@ nav i {
     outline: none;
 }
 
+#list0 {
+    display: none!important;
+}
+
 /* Placeholder*/
 
 .addListInput::-webkit-input-placeholder {
@@ -234,18 +238,18 @@ nav i {
     margin-right: 1rem;
 }
 
-.dropdown-item:hover {
-    color: #119da4
+.rename:hover {
+    color: #119da4;
+}
+
+.del:hover {
+    color: #f7677f;
 }
 
 .dropdown-item:active, .dropdown-item:focus {
     background-color: #119da4;
     outline: none;
     color: #F5F1F1;
-}
-
-#list0 {
-    display: none!important;
 }
 
 /* Modal */
