@@ -71,7 +71,6 @@ $(document).ready(function() {
             $('#editListNameModal').on('show.bs.modal', function (e) {
                 delete invoker;
                 invoker = $(e.relatedTarget);
-                console.log(invoker);
 
                 $("#editListNameSaveButton").click(function() {
 
@@ -81,8 +80,12 @@ $(document).ready(function() {
                         let newTitleName = $("#editListNameInput").val();
                         
                         $(invoker).parent().siblings("h5").text(newTitleName);
+                        
                         // Hides the modal
                         $("#editListNameModal").modal('hide');
+                        
+                        // Resets the input to blank
+                        $("#editListNameInput").val("");
                     }
 
                 });
@@ -114,7 +117,7 @@ $(document).ready(function() {
     function createNewList() {
 
         // Appends the following code to the #listContainerRow div (main viewport)
-        $('<div id="list0" class="col-12 justify-content-center list-block"><div class="card list-box"><div class="card-body dropleft"><h5 class="list-title">To Do List<i class="far fa-star not-starred"></i></h5><button class="drop-down" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-pen"></i></button><div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownEditButton"><button class="rename dropdown-item" type="button" data-toggle="modal" data-target="#editListNameModal"><i class="fas fa-edit dropdownEditMenuIcons"></i>Rename</button><button class="del dropdown-item" type="button"><i class="fas fa-trash dropdownEditMenuIcons"></i> Delete</button></div></div><ul class="list-group list-group-flush"><!-- Add new task input --><li class="list-group-item"><div class="addList"><input type="text" class="addListInput" placeholder="Add task..."></div></li></ul></div></div>')
+        $('<div id="list0" class="col-12 justify-content-center list-block"><div class="card list-box"><div class="card-body dropleft"><h5 class="list-title">To Do List</h5><i class="far fa-star listStar not-starred"></i><button class="drop-down" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-pen"></i></button><div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownEditButton"><button class="rename dropdown-item" type="button" data-toggle="modal" data-target="#editListNameModal"><i class="fas fa-edit dropdownEditMenuIcons"></i>Rename</button><button class="del dropdown-item" type="button"><i class="fas fa-trash dropdownEditMenuIcons"></i> Delete</button></div></div><ul class="list-group list-group-flush"><!-- Add new task input --><li class="list-group-item"><div class="addList"><input type="text" class="addListInput" placeholder="Add task..."></div></li></ul></div></div>')
         .appendTo("#listContainerRow");
         
         // Retrieves the ID of the new list (which is #list0)
