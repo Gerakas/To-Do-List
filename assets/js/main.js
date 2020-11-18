@@ -171,7 +171,21 @@ $(document).ready(function() {
         };
     });
     
+    // Profile Customization 
 
+    // Edit Name
+    $("#editProfileNameSaveButton").click(function() {
+         
+        if ($("#editProfileNameInput").val() != "") {
+
+            let newProfileName = $("#editProfileNameInput").val();
+            
+            $("#username").text(newProfileName);
+            $("#editProfileNameModal").modal('hide');
+            $("#editProfileNameModal").val("");
+         }
+                        
+    })
 
 
 });

@@ -62,7 +62,7 @@
 
                     <div id="user-info" class="col align-self-end">
                         
-                        <h2 id="user-name"><i>Hello,</i><b><span id="username"> Andreas</span>!</b></h2>
+                        <h2 id="user-name"><i>Hello, </i><b><span id="username">Andreas</span>!</b></h2>
                         
                         <div id="user-profile" class="dropdown">
                             
@@ -71,8 +71,8 @@
                             </button>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                <button class="dropdown-item" type="button">Edit Name</button>
-                                <button class="dropdown-item" type="button">Edit Theme</button>
+                                <button class="dropdown-item edit-name" type="button" data-toggle="modal" data-target="#editProfileNameModal">Edit Username</button>
+                                <button class="dropdown-item edit-theme" type="button">Change Theme</button>
                             </div>
 
                         </div>
@@ -136,14 +136,36 @@
         </div>
     </div>
 
+<!-- Edit Profile Name Input Modal-->
 
-<!-- List Name Edit Input Modal-->
-
-<div class="modal fade" id="editListNameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editProfileNameModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">Rename List</h3>
+        <h3 class="modal-title">Edit Username</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control-lg" id="editProfileNameInput" placeholder="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="editProfileNameCancelButton" class="btn modalButtons" data-dismiss="modal">Cancel</button>
+        <button type="button" id="editProfileNameSaveButton" class="btn modalButtons">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- List Name Edit Input Modal-->
+
+<div class="modal fade" id="editListNameModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Rename List</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -152,8 +174,8 @@
         <input type="text" class="form-control-lg" id="editListNameInput" placeholder="">
       </div>
       <div class="modal-footer">
-        <button type="button" id="editListNameCancelButton" class="btn editListNameIcons" data-dismiss="modal">Cancel</button>
-        <button type="button" id="editListNameSaveButton" class="btn editListNameIcons">Save</button>
+        <button type="button" id="editListNameCancelButton" class="btn modalButtons" data-dismiss="modal">Cancel</button>
+        <button type="button" id="editListNameSaveButton" class="btn modalButtons">Save</button>
       </div>
     </div>
   </div>

@@ -133,7 +133,7 @@ nav i {
     margin-right: 3rem;
 }
 
-#search-input, #search-input:focus, #editListNameInput, #editListNameInput:focus {
+#search-input, #search-input:focus, #editListNameInput, #editListNameInput:focus, #editProfileNameInput, #editProfileNameInput:focus {
     width: 100%;
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
@@ -254,13 +254,13 @@ nav i {
     color: #F5F1F1;
 }
 
-.editListNameIcons {
+.modalButtons {
     background-color: #119da4;
     color: #F5F1F1;
     font-size: 1.25rem;
 }
 
-.editListNameIcons:hover, .editListNameIcons:focus  {
+.modalButtons:hover, .modalButtons:focus  {
     background-color: #F5F1F1;
     color: #119da4;
     border: 1px solid #119da4;
