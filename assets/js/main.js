@@ -65,30 +65,32 @@ $(document).ready(function() {
 
         // 5. "Edit" icon to rename list
 
-        //5.a Modal Save Button
-        // $("#listContainerRow").on("click", ".fa-pen", (function() {
+        // 5.a Modal Save Button
+        function renameList() {
 
-        //     $('#editListNameModal').on('show.bs.modal', function (e) {
-        //         var invoker = $(e.relatedTarget);
+            $('#editListNameModal').on('show.bs.modal', function (e) {
+                delete invoker;
+                invoker = $(e.relatedTarget);
+                console.log(invoker);
 
-        //         $("#editListNameSaveButton").click(function() {
-                
-        //             console.log(invoker);
-        //             if ($("#editListNameInput").val() != "") {
+                $("#editListNameSaveButton").click(function() {
+
+                    if ($("#editListNameInput").val() != "") {
                         
-        //                 // Retrieves the input text and assigns it to a variable
-        //                 let newTitleName = $("#editListNameInput").val();
+                        // Retrieves the input text and assigns it to a variable
+                        let newTitleName = $("#editListNameInput").val();
                         
-        //                 $(invoker).parent().siblings("h5").text(newTitleName);
-        //                 // Hides the modal
-        //                 $("#editListNameModal").modal('hide');
-        //             }
+                        $(invoker).parent().siblings("h5").text(newTitleName);
+                        // Hides the modal
+                        $("#editListNameModal").modal('hide');
+                    }
 
-        //         });
-        //     });
+                });
+            });
             
+        };
 
-        // }));
+        $("#listContainerRow").on("click", ".fa-pen", renameList);
 
 
         // 5.b Modal Cancel Button 
