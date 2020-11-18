@@ -66,34 +66,42 @@ $(document).ready(function() {
         // 5. "Edit" icon to rename list
 
         //5.a Modal Save Button
-        $("#listContainerRow").on("click", ".fa-pen", (function() {
+        // $("#listContainerRow").on("click", ".fa-pen", (function() {
 
-            $('#editListNameModal').on('show.bs.modal', function (e) {
-                var invoker = $(e.relatedTarget);
+        //     $('#editListNameModal').on('show.bs.modal', function (e) {
+        //         var invoker = $(e.relatedTarget);
 
-                $("#editListNameSaveButton").click(function() {
+        //         $("#editListNameSaveButton").click(function() {
                 
-                    console.log(invoker);
-                    if ($("#editListNameInput").val() != "") {
+        //             console.log(invoker);
+        //             if ($("#editListNameInput").val() != "") {
                         
-                        // Retrieves the input text and assigns it to a variable
-                        let newTitleName = $("#editListNameInput").val();
+        //                 // Retrieves the input text and assigns it to a variable
+        //                 let newTitleName = $("#editListNameInput").val();
                         
-                        $(invoker).parent().siblings("h5").text(newTitleName);
-                        // Hides the modal
-                        $("#editListNameModal").modal('hide');
-                    }
+        //                 $(invoker).parent().siblings("h5").text(newTitleName);
+        //                 // Hides the modal
+        //                 $("#editListNameModal").modal('hide');
+        //             }
 
-                });
-            });
+        //         });
+        //     });
             
 
-        }));
+        // }));
 
 
         // 5.b Modal Cancel Button 
         $("#editListNameCancelButton").click(function() {
             $("#editListNameInput").val("");
+        });
+
+        // 6. Star functionality 
+        $("#listContainerRow").on("click", ".fa-star",function() {
+
+            $(this).toggleClass("far");
+            $(this).toggleClass("fas not-starred");
+
         });
     
     // Nav Menuu Functionality 
@@ -114,13 +122,23 @@ $(document).ready(function() {
         // Calculates the number of the newly created list 
         let newListIdNumber = currentListIdNumber + numberOfLists.length - 1;
         let newListID = "list" + newListIdNumber;
+        let test = "dsdfsdf";
 
         $("#listContainerRow").children().last().attr("id", newListID);
-
+        
         // Changes the display property from "none" to "inline-block"
         $("#listContainerRow").children().last().css("display", "inline-block");
         
     });
+
+    // Starred 
+    $(".nav-link-starred").on("click", function() {
+
+        if ( $("i").hasClass("not-starred") ) {
+            
+            $(".not-starred").parents(".list-block").toggle();
  
+        }
+    });
     
 });

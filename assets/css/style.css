@@ -167,6 +167,12 @@ nav i {
     display: inline-block;
 }
 
+.list-title i {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    color: #119da4;
+}
+
 .list-group-item {
     font-size: 1.5rem;
     min-height: 3rem;
