@@ -104,15 +104,20 @@ $(document).ready(function() {
 
         });
     
+    
     // Nav Menuu Functionality 
 
-    // New List
-    // Clones the existing list0
-    $(".nav-link-list").on("click", function() {
-        $("#list0").clone().appendTo("#listContainerRow");
+    // 1. New List
+    
+    function createNewList() {
+
+        // Appends the following code to the #listContainerRow div (main viewport)
+        $('<div id="list0" class="col-12 justify-content-center list-block"><div class="card list-box"><div class="card-body dropleft"><h5 class="list-title">To Do List<i class="far fa-star not-starred"></i></h5><button class="drop-down" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-pen"></i></button><div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownEditButton"><button class="rename dropdown-item" type="button" data-toggle="modal" data-target="#editListNameModal"><i class="fas fa-edit dropdownEditMenuIcons"></i>Rename</button><button class="del dropdown-item" type="button"><i class="fas fa-trash dropdownEditMenuIcons"></i> Delete</button></div></div><ul class="list-group list-group-flush"><!-- Add new task input --><li class="list-group-item"><div class="addList"><input type="text" class="addListInput" placeholder="Add task..."></div></li></ul></div></div>')
+        .appendTo("#listContainerRow");
         
-        // Retrieves the ID of the cloned list (which is the same as the original list; list0)
+        // Retrieves the ID of the new list (which is #list0)
         let currentlistId = $("#listContainerRow").children().last().attr("id");
+        
         // Vey simply calculates the number of the current list 
         let currentListIdNumber = currentlistId.charAt(currentlistId.length - 1);
 
@@ -129,16 +134,39 @@ $(document).ready(function() {
         // Changes the display property from "none" to "inline-block"
         $("#listContainerRow").children().last().css("display", "inline-block");
         
-    });
+    };
 
-    // Starred 
-    $(".nav-link-starred").on("click", function() {
+    // Once the "New List" (.nav-link-list) has been clicked, the above function gets executed.
+    $(".nav-link-list").on("click", createNewList);
 
+    
+    // 2. Starred 
+    $(".nav-link-container").on("click", ".nav-link-starred", function() {
+
+        // Checks all i elements for class .not-starred
         if ( $("i").hasClass("not-starred") ) {
             
-            $(".not-starred").parents(".list-block").toggle();
- 
-        }
+            // Assigning the the parent div of each list to a variable
+            let listBlock = $(".not-starred").parents(".list-block");
+
+            // Toggles the i elements that have the class "not-starred"
+            $(listBlock).toggle();
+            
+            // Checks to see if there are any hidden lists. And if there, unbinds the createNewList function from the "New List" link.
+            if ($(listBlock).is(":hidden")) {
+                $(".nav-link-list").off("click", createNewList);
+
+            // Otherwise, if there aren't any hidden lists, then it rebinds the fucntion to the link.
+            } else if ($(listBlock).is(":visible")) {
+                $(".nav-link-list").on("click", createNewList);
+            
+            } else {
+
+            };
+        };
     });
     
+
+
+
 });
