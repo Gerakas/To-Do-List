@@ -169,6 +169,8 @@ $(document).ready(function() {
 
             };
         };
+
+        $(".nav-link-starred").children("span").toggle();
     });
     
     // Profile Customization 
