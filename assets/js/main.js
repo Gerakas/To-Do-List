@@ -59,7 +59,7 @@ $(document).ready(function() {
         // 4. "Trash" icon to delete list 
         $("#listContainerRow").on("click", ".del", function() {
              $(this).parents(".list-block").fadeOut(500, function() { 
-                $(this).attr("display", "none"); 
+                $(this).remove(); 
             });
         });
 
@@ -104,7 +104,7 @@ $(document).ready(function() {
         // 6. Star functionality 
         $("#listContainerRow").on("click", ".fa-star",function() {
 
-            $(this).toggleClass("far");
+            $(this).toggleClass("far starred");
             $(this).toggleClass("fas not-starred");
 
         });
@@ -132,7 +132,6 @@ $(document).ready(function() {
         // Calculates the number of the newly created list 
         let newListIdNumber = currentListIdNumber + numberOfLists.length - 1;
         let newListID = "list" + newListIdNumber;
-        let test = "dsdfsdf";
 
         $("#listContainerRow").children().last().attr("id", newListID);
         
@@ -146,32 +145,45 @@ $(document).ready(function() {
 
     
     // 2. Starred 
-    $(".nav-link-container").on("click", ".nav-link-starred", function() {
-
-        // Checks all i elements for class .not-starred
-        if ( $("i").hasClass("not-starred") ) {
+    $(".nav-link-container").on("click", ".nav-link-starred", function () {
+        
+        // If there aren't any i elements with the class starred then return false
+        if ($(".listStar").hasClass("starred").length < 1) {
             
-            // Assigning the the parent div of each list to a variable
-            let listBlock = $(".not-starred").parents(".list-block");
+            false;
 
-            // Toggles the i elements that have the class "not-starred"
-            $(listBlock).toggle();
-            
-            // Checks to see if there are any hidden lists. And if there, unbinds the createNewList function from the "New List" link.
-            if ($(listBlock).is(":hidden")) {
-                $(".nav-link-list").off("click", createNewList);
+        // Checks if at least one i element has class starred
+        } else if ($(".listStar").hasClass("starred")) {
 
-            // Otherwise, if there aren't any hidden lists, then it rebinds the fucntion to the link.
-            } else if ($(listBlock).is(":visible")) {
-                $(".nav-link-list").on("click", createNewList);
-            
-            } else {
-
-            };
-        };
-
-        $(".nav-link-starred").children("span").toggle();
+            showStarredLists();
+        }
     });
+
+    function showStarredLists () {
+
+        // Toggles between the two spans in the "Starred" nav menu action.
+        $(".nav-link-starred").children("span").toggle();
+        
+        // Assigning the the parent div of each list to a variable
+        let listBlock = $(".not-starred").parents(".list-block");
+
+        // Toggles the i elements that have the class "not-starred"
+        $(listBlock).toggle();
+        
+        // Checks to see if there are any hidden lists. And if there are, unbinds the createNewList function from the "New List" link.
+        if ($(listBlock).is(":hidden")) {
+            $(".nav-link-list").off("click", createNewList);
+
+        // Otherwise, if there aren't any hidden lists, then it rebinds the fucntion to the link.
+        } else if ($(listBlock).is(":visible")) {
+            $(".nav-link-list").on("click", createNewList);
+        
+        } else {
+        
+        }
+
+    };
+
     
     // Profile Customization 
 
