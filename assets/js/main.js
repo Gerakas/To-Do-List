@@ -15,8 +15,9 @@ $(document).ready(function() {
     }
 
 
-    // Nav Menuu Functionality 
+    // ---------------- Nav Menuu Functionality 
 
+    //
     // 1. New List
     
     function createNewList() {
@@ -44,14 +45,13 @@ $(document).ready(function() {
         $("#listContainerRow").children().last().css("display", "inline-block");
 
         //Local Storage
-
         newLocalStorage();
         
     };
 
     $(".nav-link-list").on("click", createNewList);
 
-    
+    //
     // 2. Starred 
     $(".nav-link-container").on("click", ".nav-link-starred", function () {
         
@@ -94,9 +94,11 @@ $(document).ready(function() {
 
 
 
-    // List functionality
+    // ---------------- List functionality
     
     // Task Icons
+
+        //
         // 1. "Check" icon for completed task.
         $("#listContainerRow").on("click", ".fa-check",function() {
 
@@ -122,7 +124,7 @@ $(document).ready(function() {
 
         });
         
-    
+        //
         // 2. "Times" icon tom remove task.
         $("#listContainerRow").on("click", ".fa-times",function() {
 
@@ -136,7 +138,7 @@ $(document).ready(function() {
 
         });
 
-
+        //
         // 3. Add new task 
         $("#listContainerRow").on("keypress", ".addListInput", (function() {
             // This bit of code was kindly provided by https://howtodoinjava.com/jquery/jquery-detect-if-enter-key-is-pressed/
@@ -151,6 +153,7 @@ $(document).ready(function() {
             newLocalStorage();
         }));
 
+        //
         // 4. "Trash" icon to delete list 
         $("#listContainerRow").on("click", ".del", function() {
              $(this).parents(".list-block").fadeOut(500, function() { 
@@ -161,8 +164,10 @@ $(document).ready(function() {
             });
         });
 
-        // 5. "Edit" icon
+        //
+        // 5. "Edit" list name icon
 
+        //
         // 5.a Modal Save Button
         function renameList() {
 
@@ -197,12 +202,13 @@ $(document).ready(function() {
 
         $("#listContainerRow").on("click", ".fa-pen", renameList);
 
-
+        //
         // 5.b Modal Cancel Button 
         $("#editListNameCancelButton").click(function() {
             $("#editListNameInput").val("");
         });
 
+        //
         // 6. Star functionality 
         $("#listContainerRow").on("click", ".fa-star",function() {
 
@@ -216,9 +222,10 @@ $(document).ready(function() {
     
     
     
-    // Profile Customization 
-
-    // Edit Name
+    // ---------------- Profile Customization 
+    
+    //
+    // 1. Edit Name
     $("#editProfileNameSaveButton").click(function() {
          
         if ($("#editProfileNameInput").val() != "") {
@@ -234,9 +241,13 @@ $(document).ready(function() {
 
     })
 
-    // Local Storage
+    //
+    // 2. Edit Theme
+
+
+    // ---------------- Local Storage
     
-        // List Storage
+        // 1. List Storage
         var getListLS = localStorage.getItem("CurrentLists");
         if ( localStorage.getItem("CurrentLists") == null) {
             false;
@@ -245,7 +256,7 @@ $(document).ready(function() {
             $("#listContainerRow").html(getListLS);
         };
 
-        // Username Storage
+        // 2. Username Storage
         var getNameLS = localStorage.getItem("NewPName");
         if ( localStorage.getItem("NewPName") == null) {
             false;

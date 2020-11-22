@@ -137,7 +137,7 @@ nav i {
     margin-right: 3rem;
 }
 
-#search-input, #search-input:focus, #editListNameInput, #editListNameInput:focus, #editProfileNameInput, #editProfileNameInput:focus {
+#search-list-input, #search-list-input:focus, #editListNameInput, #editListNameInput:focus, #editProfileNameInput, #editProfileNameInput:focus {
     width: 100%;
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
@@ -156,7 +156,7 @@ nav i {
 }
 
 #list-container {
-    margin-top: 6rem;
+    margin-top: 10rem;
 }
 
 .list-box {
