@@ -243,7 +243,42 @@ $(document).ready(function() {
 
     //
     // 2. Edit Theme
+    $("#palette1Img").on("click", function () {
+        // This bit of code was taken from https://stackoverflow.com/questions/37801882/how-to-change-css-root-color-variables-in-javascript
+        // document.documentElement.style.setProperty('--your-variable', '#YOURCOLOR');
+        document.documentElement.style.setProperty("--primary", "#404e7c");
+        document.documentElement.style.setProperty("--secondary", "#0A369D");
 
+        // Storage
+        let currentColourTheme = $(document.documentElement);
+        console.log(currentColourTheme)
+        //localStorage.setItem("CurrentLists", currentLists);
+    })
+
+    $("#palette2Img").on("click", function () {
+        document.documentElement.style.setProperty("--primary", "#cd8b76");
+        document.documentElement.style.setProperty("--secondary", "#e1d89f");
+    })
+    
+    $("#palette3Img").on("click", function () {
+        document.documentElement.style.setProperty("--primary", "#119da4");
+        document.documentElement.style.setProperty("--secondary", "#404e7c");
+    })
+
+     $("#palette4Img").on("click", function () {
+        document.documentElement.style.setProperty("--primary", "#fe7f2d");
+        document.documentElement.style.setProperty("--secondary", "#233d4d");
+    })
+
+     $("#palette5Img").on("click", function () {
+        document.documentElement.style.setProperty("--primary", "#ac80a0");
+        document.documentElement.style.setProperty("--secondary", "#89aae6");
+    })
+
+     $("#palette6Img").on("click", function () {
+        document.documentElement.style.setProperty("--primary", "#e2969a");
+        document.documentElement.style.setProperty("--secondary", "#da4167");
+    })
 
     // ---------------- Local Storage
     

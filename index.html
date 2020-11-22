@@ -71,7 +71,17 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                 <button class="dropdown-item edit-name" type="button" data-toggle="modal" data-target="#editProfileNameModal">Edit Username</button>
-                                <button class="dropdown-item edit-theme" type="button">Change Theme</button>
+                                <button class="dropdown-item edit-theme dropdown-toggle" type="button" id="dropdownThemeButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Change Theme</button>
+
+                                <div class="dropdown-menu dropdown-menu-right" id="themeDPMenu" aria-labelledby="dropdownThemeButton">
+                                    <img src="assets/images/palette1.jpg" alt="palette1" id="palette1Img" class="imageTheme hvr-grow">
+                                    <img src="assets/images/palette2.jpg" alt="palette2" id="palette2Img" class="imageTheme hvr-grow">
+                                    <img src="assets/images/palette3.jpg" alt="palette3" id="palette3Img" class="imageTheme hvr-grow">
+                                    <img src="assets/images/palette4.jpg" alt="palette4" id="palette4Img" class="imageTheme hvr-grow">
+                                    <img src="assets/images/palette5.jpg" alt="palette5" id="palette5Img" class="imageTheme hvr-grow">
+                                    <img src="assets/images/palette6.jpg" alt="palette6" id="palette6Img" class="imageTheme hvr-grow">
+                                </div>
+
                             </div>
 
                         </div>

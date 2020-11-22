@@ -1,20 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Pacifico&display=swap');
 
+:root {
+  --primary: #119da4;
+  --secondary: #404e7c;
+}
+
 body,html {
     margin: 0;
     padding: 0;
     font-size: 12px;
     font-family: 'Montserrat',sans-serif;
     font-weight: 400;
-    background-image: linear-gradient(90deg, #119da4, #404e7c);
+    background-image: linear-gradient(45deg, var(--primary), var(--secondary));
 }
 
 body {
   caret-color: transparent;
+  
 }
 
 input {
   caret-color: #000;
+}
+
+/* This bit of code was taken from https://github.com/IanLunn/Hover/blob/master/README.md#hovercss */
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
 }
 
 
@@ -67,7 +90,7 @@ input {
 .nav-link:hover, .nav-lin:focus {
     color: #F5F1F1;
     outline: none;
-    background-color: #404e7c;
+    background-color: var(--secondary);
 }
 
 nav i {
@@ -127,6 +150,17 @@ nav i {
     font-size: 2.5rem;
 }
 
+.imageTheme {
+    height: 4rem;
+    width: 4rem;
+    margin: 1rem;
+}
+
+#themeDPMenu {
+    margin-top: 1rem;
+    min-width: 19rem;
+}
+
 
 /* Search bar ------------------------------------*/
 
@@ -151,7 +185,7 @@ nav i {
 .fa-pen {
     font-size: 1.5rem;
     margin-right: 1rem;
-    color: #119da4;
+    color: var(--primary);
     text-align: center;
 }
 
@@ -174,7 +208,7 @@ nav i {
 .listStar {
     padding-left: 1rem;
     font-size: 1.5rem;
-    color: #119da4;
+    color: var(--primary);
 }
 
 .list-group-item {
@@ -186,7 +220,7 @@ nav i {
 .list-icon {
     margin: 0 1rem;
     float: right;
-    color: #119da4;
+    color: var(--primary);
     width: 2rem;
     height:2rem;
     text-align: center;
@@ -245,7 +279,7 @@ nav i {
 }
 
 .rename:hover {
-    color: #119da4;
+    color: var(--primary);
 }
 
 .del:hover {
@@ -253,21 +287,21 @@ nav i {
 }
 
 .dropdown-item:active, .dropdown-item:focus {
-    background-color: #119da4;
+    background-color: var(--primary);
     outline: none;
     color: #F5F1F1;
 }
 
 .modalButtons {
-    background-color: #119da4;
+    background-color: var(--primary);
     color: #F5F1F1;
     font-size: 1.25rem;
 }
 
 .modalButtons:hover, .modalButtons:focus  {
     background-color: #F5F1F1;
-    color: #119da4;
-    border: 1px solid #119da4;
+    color: var(--primary);
+    border: 1px solid var(--primary);
 }
 
 
@@ -295,11 +329,11 @@ nav i {
 .modal-nav-link {
     font-size: 2rem;
     text-align: center;
-    color: #404e7c;
+    color: var(--secondary);
 }
 
 .modal-nav-link:hover, .nav-lin:focus {
-    background-color: #404e7c;
+    background-color: var(--secondary);
 }
 
 .close:focus {
