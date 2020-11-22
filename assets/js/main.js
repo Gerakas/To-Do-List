@@ -8,108 +8,13 @@ $(document).ready(function() {
         $("#sidebarToggle").toggleClass("fa-chevron-circle-right");
     });
 
-    // List functionality
-    
-    // Task Icons
-        // 1. "Check" icon for completed task.
-        $("#listContainerRow").on("click", ".fa-check",function() {
+    function newLocalStorage() {
 
-            // Fades the task out in .8 seconds
-            $(this).parents("li").fadeOut(500);
-            
-            // Adds style to text in order to show it has been completed (adds a line over it and changes its colour)
-            $(this).parent().siblings().attr("style","text-decoration: line-through; color:#404e7c;")
-            // and queues the task back in at the bottom of the list.
-            .delay(500).queue(function() {
-                // Removes the "check" icon
-                $(this).siblings().children(".fa-check").remove();
-                
-                // Changes tasks background
-                $(this).parents("li").attr("style","background-color:#F3F6F7;");
-
-                // Fades the task back into the list
-                $(this).parents("li").appendTo($(this).parents(".list-group")).fadeIn(500); 
-            });
-
-        });
-        
-    
-        // 2. "Times" icon tom remove task.
-        $("#listContainerRow").on("click", ".fa-times",function() {
-
-            // Removes task from list with a 0.5s fade out.
-            $(this).parents("li").fadeOut(500, function() { 
-                $(this).remove(); 
-            });
-
-        });
+        let currentLists = $("#listContainerRow").html();
+        localStorage.setItem("CurrentLists", currentLists);
+    }
 
 
-        // 3. Add new task 
-        $("#listContainerRow").on("keypress", ".addListInput", (function() {
-            // This bit of code was kindly provided by https://howtodoinjava.com/jquery/jquery-detect-if-enter-key-is-pressed/
-            var keycode = (event.keyCode ? event.keyCode : event.which);
-            if(keycode == '13' && $(this).val() != ""){
-            //
-                $('<li class="list-group-item"><div class="row"><div class="col-8">' + $(this).val() + '</div><div class=" col-4 list-icons-container"><i class="fas fa-times list-icon"></i><i class="fas fa-check list-icon"></i></div></div></li>').prependTo($(this).parents("ul"));
-                $(".addListInput").val("");
-            };
-        }));
-
-        // 4. "Trash" icon to delete list 
-        $("#listContainerRow").on("click", ".del", function() {
-             $(this).parents(".list-block").fadeOut(500, function() { 
-                $(this).remove(); 
-            });
-        });
-
-        // 5. "Edit" icon to rename list
-
-        // 5.a Modal Save Button
-        function renameList() {
-
-            $('#editListNameModal').on('show.bs.modal', function (e) {
-                delete invoker;
-                invoker = $(e.relatedTarget);
-
-                $("#editListNameSaveButton").click(function() {
-
-                    if ($("#editListNameInput").val() != "") {
-                        
-                        // Retrieves the input text and assigns it to a variable
-                        let newTitleName = $("#editListNameInput").val();
-                        
-                        $(invoker).parent().siblings("h5").text(newTitleName);
-                        
-                        // Hides the modal
-                        $("#editListNameModal").modal('hide');
-                        
-                        // Resets the input to blank
-                        $("#editListNameInput").val("");
-                    }
-
-                });
-            });
-            
-        };
-
-        $("#listContainerRow").on("click", ".fa-pen", renameList);
-
-
-        // 5.b Modal Cancel Button 
-        $("#editListNameCancelButton").click(function() {
-            $("#editListNameInput").val("");
-        });
-
-        // 6. Star functionality 
-        $("#listContainerRow").on("click", ".fa-star",function() {
-
-            $(this).toggleClass("far starred");
-            $(this).toggleClass("fas not-starred");
-
-        });
-    
-    
     // Nav Menuu Functionality 
 
     // 1. New List
@@ -137,10 +42,13 @@ $(document).ready(function() {
         
         // Changes the display property from "none" to "inline-block"
         $("#listContainerRow").children().last().css("display", "inline-block");
+
+        //Local Storage
+
+        newLocalStorage();
         
     };
 
-    // Once the "New List" (.nav-link-list) has been clicked, the above function gets executed.
     $(".nav-link-list").on("click", createNewList);
 
     
@@ -184,6 +92,129 @@ $(document).ready(function() {
 
     };
 
+
+
+    // List functionality
+    
+    // Task Icons
+        // 1. "Check" icon for completed task.
+        $("#listContainerRow").on("click", ".fa-check",function() {
+
+            // Fades the task out in .8 seconds
+            $(this).parents("li").fadeOut(500);
+            
+            // Adds style to text in order to show it has been completed (adds a line over it and changes its colour)
+            $(this).parent().siblings().attr("style","text-decoration: line-through; color:#404e7c;")
+            // and queues the task back in at the bottom of the list.
+            .delay(500).queue(function() {
+                // Removes the "check" icon
+                $(this).siblings().children(".fa-check").remove();
+                
+                // Changes tasks background
+                $(this).parents("li").attr("style","background-color:#F3F6F7;");
+
+                // Fades the task back into the list
+                $(this).parents("li").appendTo($(this).parents(".list-group")).fadeIn(500); 
+
+                // Local Storage
+                newLocalStorage();
+            });
+
+        });
+        
+    
+        // 2. "Times" icon tom remove task.
+        $("#listContainerRow").on("click", ".fa-times",function() {
+
+            // Removes task from list with a 0.5s fade out.
+            $(this).parents("li").fadeOut(500, function() { 
+                $(this).remove(); 
+                
+                // Local Storage
+                newLocalStorage();
+            });
+
+        });
+
+
+        // 3. Add new task 
+        $("#listContainerRow").on("keypress", ".addListInput", (function() {
+            // This bit of code was kindly provided by https://howtodoinjava.com/jquery/jquery-detect-if-enter-key-is-pressed/
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if(keycode == '13' && $(this).val() != ""){
+            //
+                $('<li class="list-group-item"><div class="row"><div class="col-8">' + $(this).val() + '</div><div class=" col-4 list-icons-container"><i class="fas fa-times list-icon"></i><i class="fas fa-check list-icon"></i></div></div></li>').prependTo($(this).parents("ul"));
+                $(".addListInput").val("");
+            };
+
+            // Local Storage
+            newLocalStorage();
+        }));
+
+        // 4. "Trash" icon to delete list 
+        $("#listContainerRow").on("click", ".del", function() {
+             $(this).parents(".list-block").fadeOut(500, function() { 
+                $(this).remove();
+                
+                // Local Storage
+                newLocalStorage();
+            });
+        });
+
+        // 5. "Edit" icon
+
+        // 5.a Modal Save Button
+        function renameList() {
+
+            $('#editListNameModal').on('show.bs.modal', function (e) {
+                delete invoker;
+                invoker = $(e.relatedTarget);
+
+                $("#editListNameSaveButton").click(function() {
+
+                    if ($("#editListNameInput").val() != "") {
+                        
+                        // Retrieves the input text and assigns it to a variable
+                        let newTitleName = $("#editListNameInput").val();
+                        
+                        $(invoker).parent().siblings("h5").text(newTitleName);
+                                                
+                    }
+
+                    // Local Storage
+                    newLocalStorage();
+
+                    // Hides the modal
+                    $("#editListNameModal").modal('hide');
+                    
+                    // Resets the input to blank
+                    $("#editListNameInput").val("");
+
+                });
+            });
+            
+        };
+
+        $("#listContainerRow").on("click", ".fa-pen", renameList);
+
+
+        // 5.b Modal Cancel Button 
+        $("#editListNameCancelButton").click(function() {
+            $("#editListNameInput").val("");
+        });
+
+        // 6. Star functionality 
+        $("#listContainerRow").on("click", ".fa-star",function() {
+
+            $(this).toggleClass("far starred");
+            $(this).toggleClass("fas not-starred");
+            
+            // Local Storage
+            newLocalStorage();
+
+        });
+    
+    
     
     // Profile Customization 
 
@@ -197,9 +228,18 @@ $(document).ready(function() {
             $("#username").text(newProfileName);
             $("#editProfileNameModal").modal('hide');
             $("#editProfileNameModal").val("");
-         }
-                        
+        }
+
     })
 
+    // Local Storage
+    var getItemLS = localStorage.getItem("CurrentLists");
+
+    if ( localStorage.getItem("CurrentLists") == null) {
+        false;
+    } else {
+        //var stringConvHTML = getItemLS.replace(">", ">\n");
+        $("#listContainerRow").html(getItemLS);
+    };
 
 });
