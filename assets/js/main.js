@@ -250,34 +250,71 @@ $(document).ready(function() {
         document.documentElement.style.setProperty("--secondary", "#0A369D");
 
         // Storage
-        let currentColourTheme = $(document.documentElement);
-        console.log(currentColourTheme)
-        //localStorage.setItem("CurrentLists", currentLists);
+        let currentPrimaryColourTheme =  "#404e7c";
+        let currentSecondaryColourTheme =  "#0A369D";
+  
+        localStorage.setItem("pCT", currentPrimaryColourTheme);
+        localStorage.setItem("sCT", currentSecondaryColourTheme);
     })
 
     $("#palette2Img").on("click", function () {
         document.documentElement.style.setProperty("--primary", "#cd8b76");
         document.documentElement.style.setProperty("--secondary", "#e1d89f");
+        
+        // Storage
+        let currentPrimaryColourTheme =  "#cd8b76";
+        let currentSecondaryColourTheme =  "#e1d89f";
+  
+        localStorage.setItem("pCT", currentPrimaryColourTheme);
+        localStorage.setItem("sCT", currentSecondaryColourTheme);
     })
     
     $("#palette3Img").on("click", function () {
         document.documentElement.style.setProperty("--primary", "#119da4");
         document.documentElement.style.setProperty("--secondary", "#404e7c");
+        
+        // Storage
+        let currentPrimaryColourTheme =  "#119da4";
+        let currentSecondaryColourTheme =  "#404e7c";
+  
+        localStorage.setItem("pCT", currentPrimaryColourTheme);
+        localStorage.setItem("sCT", currentSecondaryColourTheme);
     })
 
      $("#palette4Img").on("click", function () {
         document.documentElement.style.setProperty("--primary", "#fe7f2d");
         document.documentElement.style.setProperty("--secondary", "#233d4d");
+        
+        // Storage
+        let currentPrimaryColourTheme =  "#fe7f2d";
+        let currentSecondaryColourTheme =  "#233d4d";
+  
+        localStorage.setItem("pCT", currentPrimaryColourTheme);
+        localStorage.setItem("sCT", currentSecondaryColourTheme);
     })
 
      $("#palette5Img").on("click", function () {
         document.documentElement.style.setProperty("--primary", "#ac80a0");
         document.documentElement.style.setProperty("--secondary", "#89aae6");
+        
+        // Storage
+        let currentPrimaryColourTheme =  "#ac80a0";
+        let currentSecondaryColourTheme =  "#89aae6";
+  
+        localStorage.setItem("pCT", currentPrimaryColourTheme);
+        localStorage.setItem("sCT", currentSecondaryColourTheme);
     })
 
      $("#palette6Img").on("click", function () {
         document.documentElement.style.setProperty("--primary", "#e2969a");
         document.documentElement.style.setProperty("--secondary", "#da4167");
+        
+        // Storage
+        let currentPrimaryColourTheme =  "#e2969a";
+        let currentSecondaryColourTheme =  "#da4167";
+  
+        localStorage.setItem("pCT", currentPrimaryColourTheme);
+        localStorage.setItem("sCT", currentSecondaryColourTheme);
     })
 
     // ---------------- Local Storage
@@ -299,4 +336,12 @@ $(document).ready(function() {
             //var stringConvHTML = getItemLS.replace(">", ">\n");
             $("#username").text(getNameLS);
         };
-});
+
+        // 3. Colour Theme Storage 
+
+        let pCTLocalStorage = localStorage.getItem("pCT");
+        let sCTLocalStorage = localStorage.getItem("sCT");
+
+        document.documentElement.style.setProperty("--primary", pCTLocalStorage);
+        document.documentElement.style.setProperty("--secondary", sCTLocalStorage);
+}); 
