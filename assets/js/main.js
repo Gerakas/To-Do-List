@@ -228,18 +228,29 @@ $(document).ready(function() {
             $("#username").text(newProfileName);
             $("#editProfileNameModal").modal('hide');
             $("#editProfileNameModal").val("");
+
+            localStorage.setItem("NewPName", newProfileName)
         }
 
     })
 
     // Local Storage
-    var getItemLS = localStorage.getItem("CurrentLists");
+    
+        // List Storage
+        var getListLS = localStorage.getItem("CurrentLists");
+        if ( localStorage.getItem("CurrentLists") == null) {
+            false;
+        } else {
+            //var stringConvHTML = getItemLS.replace(">", ">\n");
+            $("#listContainerRow").html(getListLS);
+        };
 
-    if ( localStorage.getItem("CurrentLists") == null) {
-        false;
-    } else {
-        //var stringConvHTML = getItemLS.replace(">", ">\n");
-        $("#listContainerRow").html(getItemLS);
-    };
-
+        // Username Storage
+        var getNameLS = localStorage.getItem("NewPName");
+        if ( localStorage.getItem("NewPName") == null) {
+            false;
+        } else {
+            //var stringConvHTML = getItemLS.replace(">", ">\n");
+            $("#username").text(getNameLS);
+        };
 });
