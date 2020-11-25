@@ -1,8 +1,9 @@
+
 $(document).ready(function() {
     
     // Sidebar toggle
     $("#side-bar-toggle").click(function(){
-        $("#side-bar").toggle(600, "linear")
+        $("#side-bar").toggle(600, "linear");
         $("#main-viewport").toggleClass("col-xl-10 col-sm-9 col-xs-8");
         $("#sidebarToggle").toggleClass("fa-chevron-circle-left");
         $("#sidebarToggle").toggleClass("fa-chevron-circle-right");
@@ -47,7 +48,7 @@ $(document).ready(function() {
         //Local Storage
         newLocalStorage();
         
-    };
+    }
 
     $(".nav-link-list").on("click", createNewList);
 
@@ -58,7 +59,7 @@ $(document).ready(function() {
         // If there aren't any i elements with the class starred then return false
         if ($(".listStar").hasClass("starred").length < 1) {
             
-            false;
+            return false;
 
         // Checks if at least one i element has class starred
         } else if ($(".listStar").hasClass("starred")) {
@@ -90,7 +91,7 @@ $(document).ready(function() {
         
         }
 
-    };
+    }
 
 
 
@@ -145,9 +146,9 @@ $(document).ready(function() {
             var keycode = (event.keyCode ? event.keyCode : event.which);
             if(keycode == '13' && $(this).val() != ""){
             //
-                $('<li class="list-group-item"><div class="row"><div class="col-8">' + $(this).val() + '</div><div class=" col-4 list-icons-container"><i class="fas fa-times list-icon"></i><i class="fas fa-check list-icon"></i></div></div></li>').prependTo($(this).parents("ul"));
+                $('<li class="list-group-item"><div class="row"><div class="col-8">' + $(this).val() + '</div><div class=" col-4 list-icons-container"><i class="fas fa-times list-icon"></i><i class="fas fa-check list-icon"></i></div></div></li>').appendTo($(this).parents("ul"));
                 $(".addListInput").val("");
-            };
+            }
 
             // Local Storage
             newLocalStorage();
@@ -198,7 +199,7 @@ $(document).ready(function() {
                 });
             });
             
-        };
+        }
 
         $("#listContainerRow").on("click", ".fa-pen", renameList);
 
@@ -236,10 +237,10 @@ $(document).ready(function() {
             $("#editProfileNameModal").modal('hide');
             $("#editProfileNameModal").val("");
 
-            localStorage.setItem("NewPName", newProfileName)
+            localStorage.setItem("NewPName", newProfileName);
         }
 
-    })
+    });
 
     //
     // 2. Edit Theme
@@ -251,11 +252,10 @@ $(document).ready(function() {
 
         // Storage
         let currentPrimaryColourTheme =  "#404e7c";
-        let currentSecondaryColourTheme =  "#0A369D";
   
         localStorage.setItem("pCT", currentPrimaryColourTheme);
         localStorage.setItem("sCT", currentSecondaryColourTheme);
-    })
+    });
 
     $("#palette2Img").on("click", function () {
         document.documentElement.style.setProperty("--primary", "#cd8b76");
@@ -267,7 +267,7 @@ $(document).ready(function() {
   
         localStorage.setItem("pCT", currentPrimaryColourTheme);
         localStorage.setItem("sCT", currentSecondaryColourTheme);
-    })
+    });
     
     $("#palette3Img").on("click", function () {
         document.documentElement.style.setProperty("--primary", "#119da4");
@@ -279,7 +279,7 @@ $(document).ready(function() {
   
         localStorage.setItem("pCT", currentPrimaryColourTheme);
         localStorage.setItem("sCT", currentSecondaryColourTheme);
-    })
+    });
 
      $("#palette4Img").on("click", function () {
         document.documentElement.style.setProperty("--primary", "#fe7f2d");
@@ -291,7 +291,7 @@ $(document).ready(function() {
   
         localStorage.setItem("pCT", currentPrimaryColourTheme);
         localStorage.setItem("sCT", currentSecondaryColourTheme);
-    })
+    });
 
      $("#palette5Img").on("click", function () {
         document.documentElement.style.setProperty("--primary", "#ac80a0");
@@ -303,7 +303,7 @@ $(document).ready(function() {
   
         localStorage.setItem("pCT", currentPrimaryColourTheme);
         localStorage.setItem("sCT", currentSecondaryColourTheme);
-    })
+    });
 
      $("#palette6Img").on("click", function () {
         document.documentElement.style.setProperty("--primary", "#e2969a");
@@ -315,27 +315,27 @@ $(document).ready(function() {
   
         localStorage.setItem("pCT", currentPrimaryColourTheme);
         localStorage.setItem("sCT", currentSecondaryColourTheme);
-    })
+    });
 
     // ---------------- Local Storage
     
         // 1. List Storage
         var getListLS = localStorage.getItem("CurrentLists");
         if ( localStorage.getItem("CurrentLists") == null) {
-            false;
+            return false;
         } else {
             //var stringConvHTML = getItemLS.replace(">", ">\n");
             $("#listContainerRow").html(getListLS);
-        };
+        }
 
         // 2. Username Storage
         var getNameLS = localStorage.getItem("NewPName");
         if ( localStorage.getItem("NewPName") == null) {
-            false;
+            return false;
         } else {
             //var stringConvHTML = getItemLS.replace(">", ">\n");
             $("#username").text(getNameLS);
-        };
+        }
 
         // 3. Colour Theme Storage 
 

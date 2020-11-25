@@ -30,7 +30,6 @@ input {
     transform: translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     backface-visibility: hidden;
-    -moz-osx-font-smoothing: grayscale;
     transition-duration: 0.3s;
     transition-property: transform;
 }
@@ -46,7 +45,6 @@ input {
 
 #side-bar {
     background: rgba(180, 180, 180, 0.5);
-    backdrop-filter: blur(10px);
     min-height: 100vh;
     min-width: 170px;
 }
@@ -174,7 +172,6 @@ nav i {
 #search-list-input, #search-list-input:focus, #editListNameInput, #editListNameInput:focus, #editProfileNameInput, #editProfileNameInput:focus {
     width: 100%;
     background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
     border: none;
     outline: none;
 }
