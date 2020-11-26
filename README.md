@@ -5,32 +5,39 @@ An online To-Do list interface which allows users to create and “log” their 
 
 ##SITE GOALS
 
--	The website is simple in design, allowing users to be able to navigate it with ease. Users can:
--- Understand the layout effectively and with ease.
--- Start creating their own lists quickly without having to spend a long time learning the UI.
+1. The website is *simple* in design, allowing users to be able to navigate it with ease. Users can:
+ - Understand the layout effectively and with ease.
+ - Start creating their own lists quickly without having to spend a long time learning the UI.
 
--	The website can be personalised, providing a unique experience for each user. Users can:
-o	Edit the theme/ colours of the website to fit their liking.
-o	Change the name displayed on the welcoming text to their own preference.
+2.	The website can be *personalised*, providing a unique experience for each user. Users can:
+ -	Edit the theme/ colours of the website to fit their liking.
+ -	Change the name displayed on the welcoming text to their own preference.
 
--	The website uses Bootstrap to provide responsive design that adapts to the user's screen resolution. Users can:
-o	Visit the site via mobile, tablet or desktop devices without impacting the overall visual experience.
--	As the website develops it is anticipated that:
--	Search bar will be implemented to allow the user to be able to search through their list using their list titles.
--	More side-bar actions will be added to populate the side-bar and allow users to navigate lists according to certain traits, such as:
-o	Completed Lists
-o	Deleted Lists
--	Additions to current the themes for more variety and potentially even texture by implementing patterns alongside block-colours.
-UX
-I decided early on that I would like to make the experience of each user more personalised than just their own lists. This was accomplished by giving them a choice of being able to edit the theme of the website, and therefore the overall feel, by picking from a number of pre-defined palettes. These palettes were picked using Coolors (https://coolors.co/), which allowed me to generate a variety of different colour schemes that blend in well with one another. To further the personalised experience, I was trying to achieve. I decided to add a welcoming text to the top right-hand side of the page, which reads “Welcome, User!”. The user then has the choice of changing part of this text (“User”) to their own username or whatever other text they wish to change it to. 
+3.	The website uses *Bootstrap* to provide responsive design that adapts to the user's screen resolution. Users can:
+ -	Visit the site via mobile, tablet or desktop devices without impacting the overall visual experience.
+4.	As the website develops it is anticipated that:
+5.	*Search bar* will be implemented to allow the user to be able to search through their list using their list titles.
+6.	More side-bar *actions* will be added to populate the side-bar and allow users to navigate lists according to certain traits, such as:
+ -	Completed Lists
+ -	Deleted Lists
+7.	Additions to current the *themes* for more variety and potentially even texture by implementing patterns alongside block-colours.
+
+##UX
+
+I decided early on that I would like to make the experience of each user more personalised than just their own lists. This was accomplished by giving them a choice of being able to edit the theme of the website, and therefore the overall feel, by picking from a number of pre-defined palettes. These palettes were picked using [Coolors](https://coolors.co/), which allowed me to generate a variety of different colour schemes that blend in well with one another. To further the personalised experience, I was trying to achieve. I decided to add a welcoming text to the top right-hand side of the page, which reads *“Welcome, User!”*. The user then has the choice of changing part of this text (“*User*”) to their own username or whatever other text they wish to change it to. 
+
 The logo itself is just a simple h1 header with the “Pacifico” font-style applied to it. A very simple approach which binds well with the overall minimalistic style of the website and adopts the colours scheme of whatever theme currently in use.
+
 The links and buttons utilise certain effects when hovered over or when clicked on. These effects are:
 -	Change in background-colour when hovering over or clicking the element (side-bar actions, edit-list actions, edit-profile actions)
 -	Font-size scale when hovering over element (edit-list icon, theme icon)
 -	Fade-out and Fade-in (task actions; check and delete icons, side-bar toggle button)
-USER STORIES
+
+##USER STORIES
+
 This website is for users wanting to create quick and simple To-Do lists on the web.
-As a user:
+
+####As a user:
 -	I want to create a new list.
 -	I want to rename or completely delete the newly created list.
 -	I want to add a task to the list.
@@ -41,17 +48,20 @@ As a user:
 -	I want to change the background colour of the site to my liking.
 -	I want to change the welcoming text.
 -	I want to hide the sidebar for a wider view of the lists.
-As the owner of the website:
+
+####As the owner of the website:
 -	I want users to be able to create new lists easily.
 -	I want users to be able to edit the components in their lists.
 -	I want users to be able to find their lists with ease.
 -	I want users to be able to customise the website to make it feel more personal and unique.
 -	I want users to be able to access the website through a variety of devices with various screen resolutions without it affecting their visual experience.
 
-Wireframes
+##Wireframes
 
-Features
-Existing Features
+##Features
+
+###Existing Features
+
 -	Sidebar: The sidebar can be broken down into 4 distinguishable sections.
 1.	The sidebar toggle button: The main and only purpose of this button is to toggle on and off between hiding and showing the sidebar on the screen. This allows for a wider screen area/ viewport for the user to view their lists on and to make the main viewport even less populated.
 
@@ -76,14 +86,17 @@ ii.	Delete button: When clicked, deletes the list from the screen and completely
 a.	Complete a task by clicking on the “check” icon.
 b.	Remove a task by clicking on the “times” icon.
 4.	The completed task section. The last section where all the completed tasks appear, with a line through the text of the task to signify it has been completed. Similarly to the active task section, a user has the option of removing the task completely, by clicking on the “times” icon.
-Features Left to Implement
-•	Another feature idea
+
+###Features Left to Implement
+
 One of the biggest obstacles I came up against during the development of this project was time. As I had originally starting developing a different idea for my Interactive Frontend Development Milestone Project, which can be found here (https://github.com/Gerakas/Tiger-King-Chess) I found myself short on time on both accounts. This had an impact on the amount of features I was able to accommodate within the project’s final version and the quality and quantity of the site’s functionality.
 Future implementations to be include are:
 1.	A “Completed” Nav Menu button that only shows only the lists that have been completed by the user. This can be a way of re-visiting old lists for a number of reasons. Such as adding more tasks onto the previously thought completed list, remembering certain information the list may hold etc.
 2.	A “Bin” Nav Menu button that only shows the lists and/or tasks the user removed from the main-viewport.
 3.	A “Search Bar” input that allows the user to be able to search for certain lists. Making it easier to search through a large number of lists.
-Technologies Used
+
+##Technologies Used
+
 I used the following languages, frameworks and libraries to build this website:
 •	HTML5 - To create the content of the website.
 •	CSS3 - To style the content.
@@ -102,16 +115,19 @@ I used the following languages, frameworks and libraries to build this website:
 •	W3C CSS Validator: To validate CSS code.
 •	JSHint: To validate JS code.
 
-Testing
+##Testing
+
 The site has been tested using various platforms to ensure proper display and responsiveness.
 W3C Markup Validation Service validated all the HTML. W3C CSS Validation Service validated the CSS, JSHint validated the JavaScript. Pingdom tested the website's speed.
 -	W3C CSS Validator's results came back with 3 errors regarding the "blur(5px)" value from the "backdrop-filter" property. All 3 errors read as "Property backdrop-filter doesn't exist : blur(5px)", which is incorrect as the value does indeed affect the element it's targeting and therefore exists.
 
-Deployment
-The project was developed in its entirety using GitPod and hosted on GitHub pages. The live site can be found here (https://gerakas.github.io/To-Do-List/).
-Credits
+##Deployment
 
-Acknowledgements
+The project was developed in its entirety using GitPod and hosted on GitHub pages. The live site can be found here (https://gerakas.github.io/To-Do-List/).
+
+##Credits
+
+###Acknowledgements
 •	Many thanks to Felipe Alarcon for his insightful feedback and advice.
 •	Many thanks to Code Institute and the slack community for their unmatched support.
 
