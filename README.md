@@ -1,4 +1,4 @@
- ![logo](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/loglist-logo.PNG)
+ ![logo](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/logo.jpg)
  
 # LogList
 
@@ -59,9 +59,7 @@ This website is for users wanting to create quick and simple To-Do lists on the 
 
 ## Wireframes
 
-![deskot-wireframe](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/desktop.png)
-![tablet-wireframe](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/tablet.png)
-![phone-wireframe](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/phone.png)
+![deskot-wireframe](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/wireframes.jpg)
 
 ## Features
 
