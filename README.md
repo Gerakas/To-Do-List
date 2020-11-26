@@ -68,9 +68,13 @@ This website is for users wanting to create quick and simple To-Do lists on the 
 
 1.	*Sidebar*: The sidebar can be broken down into 4 distinguishable sections.
     -	The sidebar *toggle button*: The main and only purpose of this button is to toggle on and off between hiding and showing the sidebar on the screen. This allows for a wider screen area/ viewport for the user to view their lists on and to make the main viewport even less populated.
+    
     !sidebar-button](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/sidebar-button.png)
+    
     -	The *Logo*: The purpose of adding a logo to the website is to create a recognisable symbol that represents the brand and creates visual association for long-lasting recognition.
+    
     ![sidebar-logo](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/sidebar-button.png)
+    
     -	*Navigation Menu*: A set of links that allow the user to take certain actions that take affect on the lists in the main viewport. These actions consist of:
         -	Creating a *new list*. Where a user can create as many or as little lists as they like. Apart from when the user decides to only view the “starred” lists, which disables this feature entirely until the user clicks on “all” which shows all the created lists once again.
         -	*“Starred”* lists. This feature allows users to toggle through their “starred” lists and “all” lists. Essentially making it easier for them to find or sort through their pre-selected “starred”/ important list with more ease and efficiency, in case they have a great number of lists to go through.
