@@ -1,4 +1,4 @@
- ![logo](Untitled-2.png)
+ ![logo](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/loglist-logo.PNG)
  
 # LogList
 
