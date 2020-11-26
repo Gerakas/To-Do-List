@@ -2,13 +2,14 @@
  
 # LogList
 
+## Description
 An online To-Do list interface which allows users to create and “log” their own lists, in a minimal, yet aesthetically pleasing manner. The website is designed in a way that sets the user’s lists on-top of one another, mimicking the layout of a textbook and giving off the impression of a physical checklist. This coupled with the simple to navigate sidebar, will create an interface that can be used by most users with great ease.
 
 ## SITE GOALS
 
 1. The website is *simple* in design, allowing users to be able to navigate it with ease. Users can:
- - Understand the layout effectively and with ease.
- - Start creating their own lists quickly without having to spend a long time learning the UI.
+    - Understand the layout effectively and with ease.
+    - Start creating their own lists quickly without having to spend a long time learning the UI.
 
 2.	The website can be *personalised*, providing a unique experience for each user. Users can:
  -	Edit the theme/ colours of the website to fit their liking.
