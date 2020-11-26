@@ -6,8 +6,8 @@ An online To-Do list interface which allows users to create and “log” their 
 ##SITE GOALS
 
 -	The website is simple in design, allowing users to be able to navigate it with ease. Users can:
-o	Understand the layout effectively and with ease.
-o	Start creating their own lists quickly without having to spend a long time learning the UI.
+-- Understand the layout effectively and with ease.
+-- Start creating their own lists quickly without having to spend a long time learning the UI.
 
 -	The website can be personalised, providing a unique experience for each user. Users can:
 o	Edit the theme/ colours of the website to fit their liking.
