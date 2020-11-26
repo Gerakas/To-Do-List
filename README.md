@@ -12,16 +12,16 @@ An online To-Do list interface which allows users to create and “log” their 
     - Start creating their own lists quickly without having to spend a long time learning the UI.
 
 2.	The website can be *personalised*, providing a unique experience for each user. Users can:
- -	Edit the theme/ colours of the website to fit their liking.
- -	Change the name displayed on the welcoming text to their own preference.
+    -	Edit the theme/ colours of the website to fit their liking.
+    -	Change the name displayed on the welcoming text to their own preference.
 
 3.	The website uses *Bootstrap* to provide responsive design that adapts to the user's screen resolution. Users can:
- -	Visit the site via mobile, tablet or desktop devices without impacting the overall visual experience.
+    -	Visit the site via mobile, tablet or desktop devices without impacting the overall visual experience.
 4.	As the website develops it is anticipated that:
 5.	*Search bar* will be implemented to allow the user to be able to search through their list using their list titles.
 6.	More side-bar *actions* will be added to populate the side-bar and allow users to navigate lists according to certain traits, such as:
- -	Completed Lists
- -	Deleted Lists
+    -	Completed Lists
+    -	Deleted Lists
 7.	Additions to current the *themes* for more variety and potentially even texture by implementing patterns alongside block-colours.
 
 ## UX
@@ -66,13 +66,13 @@ This website is for users wanting to create quick and simple To-Do lists on the 
 
 ### Existing Features
 
--	Sidebar: The sidebar can be broken down into 4 distinguishable sections.
-1.	The sidebar toggle button: The main and only purpose of this button is to toggle on and off between hiding and showing the sidebar on the screen. This allows for a wider screen area/ viewport for the user to view their lists on and to make the main viewport even less populated.
+1.	Sidebar: The sidebar can be broken down into 4 distinguishable sections.
+    -	The sidebar toggle button: The main and only purpose of this button is to toggle on and off between hiding and showing the sidebar on the screen. This allows for a wider screen area/ viewport for the user to view their lists on and to make the main viewport even less populated.
 
-2.	The Logo: The purpose of adding a logo to the website is to create a recognisable symbol that represents the brand and creates visual association for long-lasting recognition.
-3.	Navigation Menu: A set of links that allow the user to take certain actions that take affect on the lists in the main viewport. These actions consist of:
-a.	Creating a new list. Where a user can create as many or as little lists as they like. Apart from when the user decides to only view the “starred” lists, which disables this feature entirely until the user clicks on “all” which shows all the created lists once again.
-b.	“Starred” lists. This feature allows users to toggle through their “starred” lists and “all” lists. Essentially making it easier for them to find or sort through their pre-selected “starred”/ important list with more ease and efficiency, in case they have a great number of lists to go through.
+    -	The Logo: The purpose of adding a logo to the website is to create a recognisable symbol that represents the brand and creates visual association for long-lasting recognition.
+    -	Navigation Menu: A set of links that allow the user to take certain actions that take affect on the lists in the main viewport. These actions consist of:
+        -	Creating a new list. Where a user can create as many or as little lists as they like. Apart from when the user decides to only view the “starred” lists, which disables this feature entirely until the user clicks on “all” which shows all the created lists once again.
+        -	“Starred” lists. This feature allows users to toggle through their “starred” lists and “all” lists. Essentially making it easier for them to find or sort through their pre-selected “starred”/ important list with more ease and efficiency, in case they have a great number of lists to go through.
 4.	The sidebar modal button: This button is only visible on screens that have a width of 700px or lower. It replaces the navigation menu above, with a hamburger button which once its clicked, calls a modal that has the navigation menu packed within it.
 -	Personal section: This section addresses the personalisation experience I wanted to incorporate within the website. There are 2 main features that can be found within this section.
 1.	The “Edit username” button. Here the user can edit the welcoming text to say “Hello” to a name of their choosing.
