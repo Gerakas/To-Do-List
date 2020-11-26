@@ -1,4 +1,4 @@
- ![logo](READme images/Untitled-2.png)
+ ![logo](Untitled-2.png)
  
 # LogList
 
