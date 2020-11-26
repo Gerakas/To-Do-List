@@ -69,7 +69,7 @@ This website is for users wanting to create quick and simple To-Do lists on the 
 1.	*Sidebar*: The sidebar can be broken down into 4 distinguishable sections.
     -	The sidebar *toggle button*: The main and only purpose of this button is to toggle on and off between hiding and showing the sidebar on the screen. This allows for a wider screen area/ viewport for the user to view their lists on and to make the main viewport even less populated.
     
-    !sidebar-button](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/sidebar-button.png)
+    ![sidebar-button](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/sidebar-button.png)
     
     -	The *Logo*: The purpose of adding a logo to the website is to create a recognisable symbol that represents the brand and creates visual association for long-lasting recognition.
     
@@ -78,24 +78,51 @@ This website is for users wanting to create quick and simple To-Do lists on the 
     -	*Navigation Menu*: A set of links that allow the user to take certain actions that take affect on the lists in the main viewport. These actions consist of:
         -	Creating a *new list*. Where a user can create as many or as little lists as they like. Apart from when the user decides to only view the “starred” lists, which disables this feature entirely until the user clicks on “all” which shows all the created lists once again.
         -	*“Starred”* lists. This feature allows users to toggle through their “starred” lists and “all” lists. Essentially making it easier for them to find or sort through their pre-selected “starred”/ important list with more ease and efficiency, in case they have a great number of lists to go through.
-        ![alt text](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/sidebar-nav.png)
+        
+        ![sidebar-nav](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/sidebar-nav.png)
+        
     - The sidebar *modal button*: This button is only visible on screens that have a width of 700px or lower. It replaces the navigation menu above, with a hamburger button which once its clicked, calls a modal that has the navigation menu packed within it.
-    ![alt text](image.jpg)
+    
+    ![sidebar-modal](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/sidebar-modal.png)
+    
 2.	*Personal* section: This section addresses the personalisation experience I wanted to incorporate within the website. There are 2 main features that can be found within this section.
+
 ![alt text](image.jpg)
+
     -	The “*Edit username*” button. Here the user can edit the welcoming text to say “Hello” to a name of their choosing.
-    ![alt text](image.jpg)
+    
+    ![personal- change username](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/personal-edit-username.png)
+    
     -	The “*Change Theme*” button. Here the user can edit the colour palette of the whole website, which involves the background colour of the page and certain elements (such as links and buttons) and the colour of the icons and hovered text.
-    ![alt text](image.jpg)
+    
+    ![personal-change theme](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/personal-change%20theme.png)
+    
 3.	*Lists*: These elements are the core components behind this project. Making their functionality work seamlessly with every new feature added on, an absolute necessity. Each list spans across the whole width of the screen, underlining the textbook layout that is trying to be achieved. 
 Each list can be broken down into 4 sections, with each section being made up of 1-2 core features. These include:
-    -	The *title* section. This section primarily acts as a visual identifier for each list and secondly as a sort of “control panel”. It is made up of:
+    -	The *title* section. 
+    
+    ![list-title](https://github.com/Gerakas/To-Do-List/blob/master/READme%20images/list-title.png?raw=true)
+    
+    This section primarily acts as a visual identifier for each list and secondly as a sort of “control panel”. It is made up of:
         -	The *h5 header*: Which reads the lists title
+        
+        ![list-title](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/list-title.png)
+        
         -	The *star* icon: Toggles the list into a “starred” or “non-starred” state. As a result, toggling its visibility in the “starred” view mode accordingly.
+        
+        ![list-star](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/list-star.png)
+        
         -	The *edit* icon: Presents a dropdown menu that offers the user 2 actions: 
             -	*Rename* button: When clicked, prompts an input modal to appear, which can be used to edit the lists title.
             -	*Delete* button: When clicked, deletes the list from the screen and completely removes the element from the DOM tree.
-    -	The “*Add task…*” section. This section is an input field for users to type in tasks and add them to their lists. The user can achieve this by typing out a preferred number of characters and pressing enter on the keyboard/ return on the mobile and tablet keypad.
+            
+            ![list-edit](https://github.com/Gerakas/To-Do-List/blob/master/READme%20images/list-edit.png?raw=true)
+            
+    -	The “*Add task…*” section. 
+    
+    ![list-add task](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/list-add-task.png)
+    
+    This section is an input field for users to type in tasks and add them to their lists. The user can achieve this by typing out a preferred number of characters and pressing enter on the keyboard/ return on the mobile and tablet keypad.
     -	The *active task* section: This section is where all the tasks that the user adds will appear. There are two actions that can be made within each task:
          -	*Complete* a task by clicking on the “check” icon.
         -	*Remove* a task by clicking on the “times” icon.
