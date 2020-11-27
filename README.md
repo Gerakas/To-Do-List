@@ -177,13 +177,30 @@ I used the following languages, frameworks and libraries to build this website:
 The site has been tested using various platforms to ensure proper display and responsiveness.
 [W3C Markup Validation Service](https://validator.w3.org/) validated all the HTML. [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) validated the CSS, [JSHint](https://jshint.com/) validated the JavaScript. [Pingdom](https://tools.pingdom.com/) tested the website's speed.
 
--	W3C CSS Validator's results came back with 1 error regarding the "linear-gradient" values from the "background-image" property in the root/ html element. However, the values work perfectly fine throughout the page.
+-   W3C HTML Validator's results came back with 4 warnings.
+    ![html validator](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/html-validator-before.PNG)
+    
+    With 1 warning regarding the script tag being outside both the head and body elements. Another warning regarding a modals aria-labelleby value not pointing to the right element. And the other two insignificant warnings regarding comment syntax.
 
+    After addressing these warnings, the second test results are as follow:
+    ![html validator](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/html-validator.PNG)
+
+
+-	W3C CSS Validator's results came back with 3 errors.
+    ![css validator](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/css%20validator-before.PNG)
+
+    With 2 errors regaridng the statement that the backdrop-filter's property value doesnt exist (blur) and the last error regarding the "linear-gradient" values from the "background-image" property in the root/ html element.
+
+    After addressing these errors. I found that the linear-gradient values show up as an error due to the root colour variables. The results of the second test are as follow:
     ![css validator](https://github.com/Gerakas/To-Do-List/blob/master/READme%20images/css%20validator.PNG?raw=true)
 
-- JSHint's results came back with 23 warnings about the use of 'let' variables in the code.
+- JSHint's results came back with 42 warnings. The majority of warnings were about the use of 'let' variables in the code, and the rest were about missing or unnecessary semicolons.
+    ![js validator](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/js%20validator-before.PNG)
 
+    After addressing these warnings, the second test results are as follow:
     ![js validator](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/js%20validator.PNG)
+    
+    With all 23 warnings being about the use of the "let" variable. This can be ignored according to [this](https://stackoverflow.com/questions/27441803/why-does-jshint-throw-a-warning-if-i-am-using-const) page.
 
 - Pingdom results cambe back as "Performance Grade: B 81"
 
@@ -197,7 +214,7 @@ The project was developed in its entirety using GitPod and hosted on GitHub page
 
 ### Acknowledgements
 -  JS ENTER key press event: https://howtodoinjava.com/jquery/jquery-detect-if-enter-key-is-pressed/
--  JA Changing CSS root colour variables event: https://stackoverflow.com/questions/37801882/how-to-change-css-root-color-variables-in-javascript
+-  JS Changing CSS root colour variables event: https://stackoverflow.com/questions/37801882/how-to-change-css-root-color-variables-in-javascript
 
 
 - Many thanks to Felipe Alarcon for his insightful feedback and advice.
