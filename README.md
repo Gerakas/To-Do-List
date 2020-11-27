@@ -195,8 +195,10 @@ The site has been tested using various platforms to ensure proper display and re
     ![css validator](https://github.com/Gerakas/To-Do-List/blob/master/READme%20images/css%20validator.PNG?raw=true)
 
 - JSHint's results came back with 42 warnings. The majority of warnings were about the use of 'let' variables in the code, and the rest were about missing or unnecessary semicolons.
+    
     ![js validator](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/js%20validator-before.PNG)
 
+    
     After addressing these warnings, the second test results are as follow:
     ![js validator](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/js%20validator.PNG)
     
