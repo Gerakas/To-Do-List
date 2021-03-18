@@ -1,5 +1,4 @@
- ![logo](https://raw.githubusercontent.com/Gerakas/To-Do-List/master/READme%20images/logo.jpg)
- 
+
 # LogList
 
 ## Description
